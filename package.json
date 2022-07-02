@@ -13,6 +13,7 @@
   "author": "yuanhuan",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^19.0.4"
+    "electron": "^19.0.4",
+    "electron-builder": "^23.1.0"
   }
 }

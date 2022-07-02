@@ -1,3 +1,6 @@
+const { contextBridge, ipcRenderer }  = require('electron');
+
+
 // 将该文件添加至渲染器流程。
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -10,4 +13,9 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText(`${depend}-version`, process.versions[depend]);
   }
 
+});
+
+// 将electron的函数暴露到
+contextBridge.exposeInMainWorld('eletronAPI', {
+  setTitle: title => ipcRenderer.send('set-title', title)
 })
