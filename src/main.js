@@ -8,7 +8,7 @@
 
 //  @params   app               控制应用程序的事件生命周期
 //  @params   BrowserWindow     创建和管理应用程序窗口
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, dialog, ipcMain } = require('electron');
 const path = require('path');
 
 
@@ -23,24 +23,12 @@ const createWindow = () => {
       preload: path.join(__dirname, './util/preload.js')
     }
   })
-
-
-  // ipcMain来接收信息
-  ipcMain.on('set-title', handleSetTitile)
-
-
+  
   //  loadFile加载文件
-  win.loadFile(path.join(__dirname, './page/index.html'));
-
+  win.loadFile(path.join(__dirname, '../vue/dist/index.html'));
 
 }
 
-// 处理函数
-function handleSetTitile(event, title){
-  const webContents = event.sender;
-  const win = BrowserWindow.fromWebContents(webContents);
-  win.setTitle(title);
-}
 
 
 // 在ready下去调用创建窗口的方法
