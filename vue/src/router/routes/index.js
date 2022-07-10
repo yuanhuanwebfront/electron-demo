@@ -1,7 +1,7 @@
 const routes = [
   {
     path: '/',
-    component: () => import('@/views/Home/index.vue')
+    component: () => import('@/Layout/index.vue')
   },
   {
     path: '/setting',
