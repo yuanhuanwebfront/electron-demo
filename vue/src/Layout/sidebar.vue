@@ -4,14 +4,14 @@
   
   const routesArr = routes[0].children;
 
-  console.log(routesArr)
 
 </script>
 
 <template>
   <div class="sidebar-container">
-    <div class="flex pl-20 logo">
+    <div class="flex pl-20 mb-12 logo">
       <UserHead></UserHead>
+      <span class="pl-12">未登录</span>
     </div>
     <div class="sidebar-item" v-for="route in routesArr" 
       :key="route.name">
