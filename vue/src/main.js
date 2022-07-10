@@ -5,6 +5,7 @@ import router from './router/index';
 
 import 'normalize.css';
 import './assets/style/main.css';
+import './assets/style/font/iconfont.css';
 
 const app = createApp(App);
 

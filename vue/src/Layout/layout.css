@@ -1,14 +1,40 @@
 .layout-container{
   align-items: flex-start;
 }
+
 .sidebar-container{
   width: 200px;
   height: 100vh;
-  border-right: 1px solid #f1f1f1;
 }
+.sidebar-container .logo{
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.sidebar-container .sidebar-item .link{
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  color: #333;
+  font-size: 12px;
+  transition: 0.3s;
+}
+.sidebar-item .link:hover,
+.sidebar-item .link.active{
+  background-color: #f3f3f3;
+}
+.sidebar-item .link:active,
+.sidebar-item .link.active{
+  color: var(--red);
+}
+
+
+
 .content-container{
   flex-grow: 1;
   height: 100vh;
   overflow-y: auto;
+  box-sizing: border-box;
+  padding: 20px;
   background-image: linear-gradient(to top, #d299c233 0%, #fef9d72f 100%);
 }
